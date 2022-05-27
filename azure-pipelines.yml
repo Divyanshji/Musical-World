@@ -7,10 +7,15 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  name: Default
+  demands:
+  - Agent.Name -equals SelfHosted
+
 
 variables:
   phpVersion: 7.2
+steps:
+
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'Sonarcloud service'
@@ -19,7 +24,6 @@ variables:
     projectKey: 'divyanshjainjpr_TestSonarCloud'
     projectName: 'TestSonarCloud'
 
-steps:
 - script: |
     sudo update-alternatives --set php /usr/bin/php$(phpVersion)
     sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
