@@ -13,7 +13,7 @@ pool:
 
 
 variables:
-  phpVersion: 7.4
+  phpVersion: 7.2
 steps:
 
 - task: SonarCloudPrepare@1
