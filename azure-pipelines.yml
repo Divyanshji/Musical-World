@@ -20,9 +20,11 @@ steps:
   inputs:
     SonarCloud: 'Sonarcloud service'
     organization: 'divyanshjainjpr'
-    scannerMode: 'MSBuild'
-    projectKey: 'divyanshjainjpr_TestSonarCloud'
-    projectName: 'TestSonarCloud'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'divyanshjainjpr_TestSonarCloud'
+    cliProjectName: 'TestSonarCloud'
+    cliSources: '.'
 
 - script: |
     sudo update-alternatives --set php /usr/bin/php$(phpVersion)
