@@ -9,7 +9,7 @@ trigger:
 pool:
   name: TestPool
   demands:
-  - Agent.Name -equals SelfHosted
+  - agent.name -equals SelfHosted
 
 
 variables:
